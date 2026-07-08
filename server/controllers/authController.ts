@@ -21,7 +21,7 @@ const getAdminStatus = (email: string | null | undefined) : boolean =>{
 export const register = async (req: Request, res: Response) => {
     const {name, email, password} = req.body;
 
-    if(!name || !email || password){
+    if(!name || !email || !password){
         return res.status(400).json({message: "Please provide all fields"})
     }
 
@@ -51,7 +51,7 @@ export const register = async (req: Request, res: Response) => {
 export const login = async (req: Request, res: Response) => {
     const {email, password} = req.body;
 
-    if(!email || password){
+    if(!email || !password){
         return res.status(400).json({message: "Please provide email and password"})
     }
 
